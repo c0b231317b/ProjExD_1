@@ -18,6 +18,7 @@ def main():
             if event.type == pg.QUIT: return
 
         screen.blit(bg_img, [0, 0])  #読み込んだ画像を貼り付け(blit), 基本的にループの中
+        screen.blit(tori_img, [300, 200])  #★４
         pg.display.update()
         tmr += 1        
         clock.tick(10)
