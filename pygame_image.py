@@ -21,18 +21,20 @@ def main():
     while True:
         for event in pg.event.get():
             if event.type == pg.QUIT: return
+        tori_x = -1
+        tori_y = 0
 
         key_lst = pg.key.get_pressed() #8-3
         if key_lst[pg.K_UP]:
-            tori_rct.move_ip((-1, -1))
+            tori_y = -1
         if key_lst[pg.K_DOWN]:
-            tori_rct.move_ip((-1, 1))
+            tori_y = 1
         if key_lst[pg.K_LEFT]:
-            tori_rct.move_ip((-1, 0))
+            tori_x = -2
         if key_lst[pg.K_RIGHT]:
-            tori_rct.move_ip((1, 0)) 
-        else:
-            tori_rct.move_ip((-1, 0))
+            tori_x = 1
+
+        tori_rct.move_ip((tori_x, tori_y))
         
         
         x = -(tmr%3200)
