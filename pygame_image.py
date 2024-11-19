@@ -12,12 +12,12 @@ def main():
     bg_img = pg.image.load("fig/pg_bg.jpg")  #p.61 よく使う
     tori_img = pg.image.load("fig/3.png")   #★２
     tori_img = pg.transform.flip(tori_img, True, False)
-    tmr = 0
+    tmr = 0  #タイマー
     while True:
         for event in pg.event.get():
             if event.type == pg.QUIT: return
-
-        screen.blit(bg_img, [0, 0])  #読み込んだ画像を貼り付け(blit), 基本的にループの中
+        x = tmr%800
+        screen.blit(bg_img, [-x, 0])  #読み込んだ画像を貼り付け(blit), 基本的にループの中
         screen.blit(tori_img, [300, 200])  #★４
         pg.display.update()
         tmr += 1        
